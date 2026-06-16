@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #f4f6fb;
+  --white: #ffffff;
+  --surface: #f0f2fa;
+  --border: #dde2f0;
+  --border2: #c5cce8;
+  --accent: #4f46e5;
+  --alight: #eef0ff;
+  --green: #059669;
+  --amber: #b45309;
+  --blue: #0369a1;
+  --red: #dc2626;
+  --tmid: #4b5563;
+  --tdim: #9ca3af;
+  --text: #1e1b4b;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.header {
+  background: linear-gradient(135deg, #4338ca, #6366f1);
+  padding: 34px 20px 28px;
+  text-align: center;
+}
+
+.header h1 {
+  color: #fff;
+  font-size: clamp(20px, 4vw, 32px);
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.header p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 26px 16px 60px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 4px rgba(79, 70, 229, 0.06);
+}
+
+.card-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.igrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 560px) {
+  .igrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tmid);
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 13px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  outline: none;
+}
+
+.field input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.field input.err {
+  border-color: var(--red);
+}
+
+.fhint {
+  font-size: 11px;
+  color: var(--tdim);
+  margin-top: 4px;
+}
+
+.ferr {
+  display: none;
+  font-size: 11px;
+  color: var(--red);
+  margin-top: 4px;
+}
+
+.mode-row {
+  margin-bottom: 18px;
+}
+
+.ml {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tmid);
+  margin-bottom: 7px;
+}
+
+.mtog {
+  display: inline-flex;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.mbtn {
+  padding: 7px 20px;
+  border: none;
+  background: none;
+  color: var(--tmid);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.mbtn.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+}
+
+.brow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-p {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-s {
+  background: var(--surface);
+  color: var(--tmid);
+  border: 1.5px solid var(--border);
+}
+
+#rbox {
+  display: none;
+}
+
+.rhero {
+  background: linear-gradient(135deg, var(--alight), #e0e7ff);
+  border: 1.5px solid #c7d2fe;
+  border-radius: 10px;
+  padding: 22px;
+  text-align: center;
+}
+
+.rlbl {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.rbits {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.rbit {
+  width: 42px;
+  height: 42px;
+  background: #fff;
+  border: 1.5px solid #c7d2fe;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.rbit.one {
+  color: var(--accent);
+  background: var(--alight);
+}
+
+.rbit.zero {
+  color: var(--tdim);
+}
+
+.rstr {
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 5px;
+}
+
+.togbtn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px 18px;
+  background: var(--surface);
+  border: 1.5px dashed var(--border2);
+  border-radius: 8px;
+  color: var(--tmid);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#sol {
+  display: none;
+  margin-top: 18px;
+}
+
+.sec {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+
+.stitle {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 14px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-bottom: 12px;
+}
+
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.tbl th,
+.tbl td {
+  border: 1px solid var(--border2);
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.tbl th {
+  background: var(--alight);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.tbl td:first-child {
+  text-align: left;
+  font-weight: 700;
+  color: var(--tmid);
+  background: var(--surface);
+}
+
+.bitline {
+  font-family: var(--mono);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.info {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.info b {
+  font-family: var(--mono);
+  color: var(--accent);
+}
+
+.final-box {
+  background: linear-gradient(135deg, var(--alight), #e0e7ff);
+  border: 1.5px solid #c7d2fe;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.final-box div {
+  margin: 6px 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 18px 0 24px;
+  font-size: 12px;
+  color: var(--tdim);
+  border-top: 1px solid var(--border);
+}

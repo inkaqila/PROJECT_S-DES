@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S-DES Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <h1>S-DES Simulator</h1>
+    <p>Simplified Data Encryption Standard — Enkripsi & Dekripsi dengan Backend API</p>
+  </header>
+
+  <main class="wrap">
+
+    <section class="card">
+      <div class="card-lbl">Input Data</div>
+
+      <div class="igrid">
+        <div class="field">
+          <label for="it">Plaintext / Ciphertext 8-bit</label>
+          <input 
+            type="text" 
+            id="it" 
+            maxlength="8" 
+            placeholder="10001101" 
+            autocomplete="off" 
+            spellcheck="false"
+          />
+          <div class="fhint">Masukkan 8 digit biner. Contoh: 10001101</div>
+          <div class="ferr" id="et">Harus tepat 8 digit biner, hanya 0 dan 1.</div>
+        </div>
+
+        <div class="field">
+          <label for="ik">Key 10-bit</label>
+          <input 
+            type="text" 
+            id="ik" 
+            maxlength="10" 
+            placeholder="1001001110" 
+            autocomplete="off" 
+            spellcheck="false"
+          />
+          <div class="fhint">Masukkan 10 digit biner. Contoh: 1001001110</div>
+          <div class="ferr" id="ek">Harus tepat 10 digit biner, hanya 0 dan 1.</div>
+        </div>
+      </div>
+
+      <div class="mode-row">
+        <div class="ml">Mode Operasi</div>
+        <div class="mtog">
+          <button class="mbtn active" id="be" onclick="setMode('enc')">🔒 Enkripsi</button>
+          <button class="mbtn" id="bd" onclick="setMode('dec')">🔓 Dekripsi</button>
+        </div>
+      </div>
+
+      <div class="brow">
+        <button class="btn btn-p" onclick="go()">▶ Proses</button>
+        <button class="btn btn-s" onclick="rst()">↺ Reset</button>
+      </div>
+    </section>
+
+    <section id="rbox" class="card">
+      <div class="card-lbl">Hasil</div>
+
+      <div class="rhero">
+        <div class="rlbl" id="rl">Ciphertext</div>
+        <div class="rbits" id="rb"></div>
+        <div class="rstr" id="rs"></div>
+      </div>
+
+      <button class="togbtn" id="tb" onclick="tog()">
+        <span id="ttext">Tampilkan Solusi Penyelesaian</span>
+        <span class="tarr" id="ta">▼</span>
+      </button>
+
+      <div id="sol"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    Inka Aqila | Cryptography
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
