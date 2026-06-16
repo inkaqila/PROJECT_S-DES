@@ -1,0 +1,16 @@
+{
+    "name": "project-sdes",
+    "version": "1.0.0",
+    "description": "S-DES Simulator with Express backend and frontend",
+    "scripts": {
+      "start": "cd backend && npm start",
+      "build": "cd backend && npm install"
+    },
+    "dependencies": {
+      "cors": "^2.8.5",
+      "express": "^5.2.1"
+    },
+    "engines": {
+      "node": ">=20"
+    }
+  }
